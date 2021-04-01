@@ -2,29 +2,29 @@
 using namespace std;
 int main()
 {
-    int n,fact=1;
-    cin>>n;
-    int arr[(n/2)+1];
-    for(int i=0;i<=n/2;i++)
-    arr[i]=i;
-    cout<<sizeof(arr)/sizeof(arr[0])<<endl;
-    for(int i=2;i<=n/2;i++)
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    long long int t,n=10000000,num,i,j;
+    vector<int> ans(n+1,0);
+    ans[1]=1;
+    //cout<<ans[10000000]<<" ";
+    for(i=2;i<=n;i++)
     {
-        if(arr[i]!=-1 && n%arr[i]>0)
+        if(ans[i]==0)
         {
-            for(int j=arr[i]*arr[i];j<=n/2;j=j+arr[i])
-            arr[j]=-1;
-        }        
-    }
-    for(int i=n/2;i>=sqrt(n);i--)
-    {
-
-        if(arr[i]!=-1 && n%arr[i]==0 )
-        {
-            fact=arr[i];
-            break;
+            ans[i]=i;
+            for(j=i*i;j<=n;j=j+i)
+            {
+                if(ans[j]==0)
+                ans[j]=i;
+            }
         }
     }
-    //cout<<arr.size()<<endl;
-    cout<<"\nFactor is "<<fact;
+    cin>>t;
+    while(t--)
+    {
+        cin>>num;
+        cout<<num/ans[num]<<endl;
+    }
+    return 0;
 }
