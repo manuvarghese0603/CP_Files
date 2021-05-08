@@ -1,44 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
- 
-void leastPrimeFactor(long long int n)
+ int main()
 {
-    // Create a vector to store least primes.
-    // Initialize all entries as 0.
-    vector<int> least_prime(n+1, 0);
- 
-    // We need to print 1 for 1.
-    least_prime[1] = 1;
- 
-    for (int i = 2; i <= n; i++)
-    {
-        // least_prime[i] == 0
-        // means it i is prime
-        if (least_prime[i] == 0)
-        {
-            // marking the prime number
-            // as its own lpf
-            least_prime[i] = i;
- 
-            // mark it as a divisor for all its
-            // multiples if not already marked
-            for (int j = i*i; j <= n; j += i)
-                if (least_prime[j] == 0)
-                   least_prime[j] = i;
-        }
-    }
- 
-    // print least prime factor of
-    // of numbers till n
-    for (int i = 1; i <= n; i++)
-        cout << "Least Prime factor of "
-             << i << ": " << least_prime[i] << "\n";
-}
- 
-// Driver program to test above function
-int main()
-{
-    long long int n = 10000;
-    leastPrimeFactor(n);
-    return 0;
+    int n;
+    cin>>n;
+    int a[n],b[n]={0};
+    for(int i=0;i<n;i++)
+    cin>>a[i];
+    for(int i=0;i<n;i++)
+    b[a[i]]=a[i];
+    for(int i=0;i<n;i++)
+    cout<<b[i]<<"  "; 
 }
