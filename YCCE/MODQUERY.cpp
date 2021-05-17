@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-//int power(int , int );
+int mpow(int , int ,int );
 int main()
 {
     int t;
@@ -39,11 +39,16 @@ int main()
         }
         else if(power.compare(s)==0)
         {
-            //a=base b=power
-            temp=a%m;
-            p=pow(temp,b);
-            cout<<p%m<<endl;
+           cout<<mpow(a,b,m)<<endl;
         }
     }
     return 0;
+}
+int mpow(int a,int b,int m)
+{
+    
+    if(y==0)
+    return 1;
+    int k=mpow(a,b/2,m);
+    if()
 }
