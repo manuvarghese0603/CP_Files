@@ -1,15 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define ll long long
 int main()
 {
-    char c;
-    cin>>c;
-    cout<<c<<" ";
-    if(c=='X')
-    cout<<"1";
-    if(c=='O')
-    cout<<"2";
-    if(c=='_')
-    cout<<"8";
+	int a,z=1,ans;
+	string s;
+	cin>>s;
+	//cin>>a;
+	ans=(s[0]-48)^z;
+	//cout<<ans;
+	cout<<endl<<s;
+
 }
-// _ 95,O 79,X 88
