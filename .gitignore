@@ -2,3 +2,5 @@ Test.cpp
 Test.exe
 test.py
 *.exe
+.vscode/
+Competitive Programmer’s Handbook.pdf
