@@ -2,6 +2,6 @@ Test.cpp
 Test.exe
 test.py
 *.exe
-.vscode/
+.vscode/*
 Competitive Programmer’s Handbook.pdf
 Other/Test.exe
